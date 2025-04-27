@@ -19,4 +19,4 @@ console.log(guests[1]);
 // acessar o elemento pela tag
 
 const guestsTag = document.getElementsByTagName("li")
-console.log(guestsTag[0]);
+console.log(guestsTag);
