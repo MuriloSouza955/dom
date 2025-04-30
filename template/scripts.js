@@ -1,22 +1,13 @@
-// Visualizando o DOM (document object model)
-console.log(document);
+/*
+Query Selector
+Nesta aula, foi abordado o uso do Query Selector para acessar elementos no DOM. Foi mostrado como selecionar elementos por ID e por classe, além de destacar a diferença entre QuerySelector e QuerySelector.all, que retorna todos os elementos encontrados.
+*/
 
-// Obtendo o title da página
-console.log(document.title);
-
-// obtendo o elemento pelo ID (SELETOR ID)
-const guest = document.getElementById("guest-1")
+// Selecionando um elemento pelo ID
+const guest = document.querySelector('#guest-1');
 console.log(guest);
 
-// mostra as propriedades do elemento
-console.dir(guest);
-
-// acessar o elemento pela classe
-const guests = document.getElementsByClassName("guest")
-console.log(guests.item(0));
-console.log(guests[1]);
-
-// acessar o elemento pela tag
-
-const guestsTag = document.getElementsByTagName("li")
-console.log(guestsTag);
+// Selecionando um elemento pela classe
+//const guests = document.querySelector('.guest');
+const guests = document.querySelectorAll('.guest');
+console.log(guests);
