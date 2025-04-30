@@ -1,13 +1,16 @@
 /*
-Query Selector
-Nesta aula, foi abordado o uso do Query Selector para acessar elementos no DOM. Foi mostrado como selecionar elementos por ID e por classe, além de destacar a diferença entre QuerySelector e QuerySelector.all, que retorna todos os elementos encontrados.
+
+Manipulando Conteúdo
+Neste vídeo, expliquei como manipular o conteúdo dos elementos no DOM. Mostrei como selecionar elementos pelo ID, acessar propriedades como textContent para exibir e atribuir conteúdo em texto. Também abordei as diferenças entre textContent, innerText e innerHTML, destacando que textContent exibe conteúdo visível e oculto, enquanto innerText mostra apenas o conteúdo visível.
+
 */
 
-// Selecionando um elemento pelo ID
 const guest = document.querySelector('#guest-1');
-console.log(guest);
 
-// Selecionando um elemento pela classe
-//const guests = document.querySelector('.guest');
-const guests = document.querySelectorAll('.guest');
-console.log(guests);
+console.log(guest.textContent); // retorna o conteudo (texto) do elemento, visível e o oculto
+
+guest.textContent = 'Murilo'; // altera o conteudo (texto) do elemento
+
+console.log(guest.innerText); // retorna o conteudo (texto) do elemento
+
+console.log(guest.innerHTML); // retorna o conteudo (html) do elemento
