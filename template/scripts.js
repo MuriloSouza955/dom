@@ -1,16 +1,21 @@
 /*
 
-Manipulando Conteúdo
-Neste vídeo, expliquei como manipular o conteúdo dos elementos no DOM. Mostrei como selecionar elementos pelo ID, acessar propriedades como textContent para exibir e atribuir conteúdo em texto. Também abordei as diferenças entre textContent, innerText e innerHTML, destacando que textContent exibe conteúdo visível e oculto, enquanto innerText mostra apenas o conteúdo visível.
+Alterando Estilos
+Nesta aula, aprendemos a manipular estilos dos elementos da DOM utilizando JavaScript. Foi mostrado como adicionar e remover classes dinamicamente, além de utilizar o método toggle para alternar entre adicionar e remover uma classe. Também foi demonstrado como modificar propriedades de estilo, como a cor de um botão, diretamente pelo JavaScript. Essas técnicas são úteis para personalizar a aparência dos elementos na página de forma dinâmica.
 
 */
 
-const guest = document.querySelector('#guest-1');
+const input = document.querySelector('#name');
+// // adiciona a classe input-error
+// input.classList.add('input-error');
 
-console.log(guest.textContent); // retorna o conteudo (texto) do elemento, visível e o oculto
+// // remove a classe input-error
+// input.classList.remove('input-error');
 
-guest.textContent = 'Murilo'; // altera o conteudo (texto) do elemento
+// // adiciona a classe input-error se não estiver presente, ou remove se já estiver presente
+// input.classList.toggle('input-error');
 
-console.log(guest.innerText); // retorna o conteudo (texto) do elemento
+const button = document.querySelector('button');
 
-console.log(guest.innerHTML); // retorna o conteudo (html) do elemento
+//Modificando o estilo diretamente
+// button.style.backgroundColor = 'red';
