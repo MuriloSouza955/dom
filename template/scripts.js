@@ -1,14 +1,17 @@
 /*
 
-Manipulando Atributos
-É possível manipular atributos dos elementos da página utilizando JavaScript. Por exemplo, selecionar um input e desabilitá-lo com setAttribute('disabled', true). Também é possível alterar o tipo do input, como de texto para arquivo, com setAttribute('type', 'file'). Além disso, é possível remover um atributo com removeAttribute('nomeDoAtributo'). Essas manipulações são úteis para personalizar a interação do usuário com formulários, como bloquear campos ou alterar tipos de entrada.
+Eventos
+Nesta aula de programação em JavaScript, aprendemos sobre eventos, que são ações realizadas pelo usuário para interagir com a aplicação. Foi mostrado como adicionar event listeners para observar e lidar com eventos, como o de carregamento da página e de clique em elementos do DOM. Também foi abordado como recuperar informações do evento, como o elemento clicado, e como prevenir comportamentos padrão, como recarregar a página ao clicar em um botão de envio em um formulário.
 
 */
 
-const input = document.querySelector('input');
+window.addEventListener('load', () => {
+    console.log('A página foi carregada!');
+});
 
-// input.setAttribute('disabled', true); // Desabilita o input
-
-// input.setAttribute('type', 'file'); // Altera o tipo do input para arquivo
-
-// input.removeAttribute('id'); // Remove o atributo disabled do input
+addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log(event); // retorna todas as informações do evento
+    console.log(event.target); // retorna o elemento clicado
+    console.log(event.target.textContent); // retorna o texto do elemento clicado
+});
