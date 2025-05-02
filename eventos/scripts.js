@@ -1,23 +1,30 @@
 /*
 
-Eventos em um elemento específico
-Nesta aula, aprendemos a identificar eventos em elementos específicos em JavaScript. Foi mostrado como observar o evento de scroll em uma lista, exibindo informações como a distância do topo da lista. Também foi demonstrado como manipular o scroll, levando o usuário de volta ao topo da lista. Além disso, vimos como adicionar eventos de clique em botões específicos. A importância de desabilitar o comportamento padrão do evento de clique também foi destacada.
+Eventos de formulário
+Nesta aula, focamos nos eventos de formulário, mostrando como selecionar um formulário e lidar com eventos como OnSubmit. Expliquei a diferença entre usar OnSubmit diretamente e addEventListener, destacando que OnSubmit considera apenas o último listener criado, enquanto addEventListener executa todos. Demonstrei na prática como isso afeta o comportamento dos eventos. Essas diferenças são importantes para escolher a abordagem correta ao lidar com eventos em formulários.
 
 */
 
-const ul = document.querySelector('ul');
+const form = document.querySelector('form');
 
-ul.addEventListener('scroll', (event) => {
-    if (ul.scrollTop === 303) {
-        ul.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+// com o OnSubmit, vai mostrar apenas o ultimo listener criado
+form.onsubmit = (event) => {
+    event.preventDefault();
+    console.log('Formulário foi enviado! (OnSubmit1)');
+};
+
+form.onsubmit = (event) => {
+    event.preventDefault();
+    console.log('Formulário foi enviado! (OnSubmit2)');
+};
+
+// Já com addEventListener, vai mostrar todos os listeners criados
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    console.log('Formulário foi enviado! (addEventListener3)');
 });
 
-const button = document.querySelector('button');
-button.addEventListener('click', (event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log('Botão clicado!');
+    console.log('Formulário foi enviado! (addEventListener4)');
 });
