@@ -1,30 +1,34 @@
 /*
 
-Eventos de formulário
-Nesta aula, focamos nos eventos de formulário, mostrando como selecionar um formulário e lidar com eventos como OnSubmit. Expliquei a diferença entre usar OnSubmit diretamente e addEventListener, destacando que OnSubmit considera apenas o último listener criado, enquanto addEventListener executa todos. Demonstrei na prática como isso afeta o comportamento dos eventos. Essas diferenças são importantes para escolher a abordagem correta ao lidar com eventos em formulários.
+Eventos em input
+Neste vídeo, expliquei sobre eventos de input em JavaScript. Demonstrei como capturar eventos de "keydown" e "keypress" em um campo de input, destacando as diferenças entre eles. Também mostrei o evento "change", que é acionado quando o conteúdo do input é alterado. Expliquei a importância de conhecer esses eventos para ampliar as possibilidades de programação em JavaScript e se tornar um especialista na linguagem. É fundamental entender essas estruturas para utilizar a melhor abordagem em cada situação.
+
+
 
 */
 
-const form = document.querySelector('form');
+const input = document.querySelector('input');
 
-// com o OnSubmit, vai mostrar apenas o ultimo listener criado
-form.onsubmit = (event) => {
-    event.preventDefault();
-    console.log('Formulário foi enviado! (OnSubmit1)');
-};
+// //keydown - quando o usuário pressiona uma tecla (CTRL, SHIFT, TAB, etc)
+// input.addEventListener('keydown', (event) => {
+//     console.log(event.key);
+// });
 
-form.onsubmit = (event) => {
-    event.preventDefault();
-    console.log('Formulário foi enviado! (OnSubmit2)');
-};
-
-// Já com addEventListener, vai mostrar todos os listeners criados
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log('Formulário foi enviado! (addEventListener3)');
+//keypress - quando o usuário pressiona uma tecla do tipo caractere (letras, números, etc)
+input.addEventListener('keypress', (event) => {
+    console.log(event.key);
 });
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log('Formulário foi enviado! (addEventListener4)');
-});
+//change - quando o conteúdo do input é alterado, mas dispara somento quando sai a caixa de texto.
+input.onchange = () => {
+    console.log('O conteúdo do input foi alterado!');
+};
+
+input.onchange = () => {
+    inputChange();
+};
+
+
+function inputChange() {
+    console.log('O conteúdo do input foi alterado!');
+}
