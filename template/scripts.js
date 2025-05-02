@@ -1,31 +1,14 @@
 /*
 
-Criando Elementos
-Nesta aula, aprendemos a criar elementos com JavaScript e inseri-los na DOM. Utilizamos o método document.createElement para criar novos elementos, como li e span, e o método append para adicionar elementos. Também exploramos o método prepend para adicionar elementos no início. Além disso, vimos como adicionar classes aos elementos criados. Com essas técnicas, é possível manipular a estrutura da página de forma dinâmica e criar elementos de forma programática.
+Manipulando Atributos
+É possível manipular atributos dos elementos da página utilizando JavaScript. Por exemplo, selecionar um input e desabilitá-lo com setAttribute('disabled', true). Também é possível alterar o tipo do input, como de texto para arquivo, com setAttribute('type', 'file'). Além disso, é possível remover um atributo com removeAttribute('nomeDoAtributo'). Essas manipulações são úteis para personalizar a interação do usuário com formulários, como bloquear campos ou alterar tipos de entrada.
 
 */
 
-const guests = document.querySelector("ul")
+const input = document.querySelector('input');
 
-const newGuest = document.createElement("li")
-// Adiciona uma classe ao elemento
-newGuest.classList.add("guest")
-// Adiciona um id ao elemento`
-newGuest.id = "guest-3"
-const guestName = document.createElement("span")
+// input.setAttribute('disabled', true); // Desabilita o input
 
-guestName.textContent = "Lucas"
+// input.setAttribute('type', 'file'); // Altera o tipo do input para arquivo
 
-const guestSurname = document.createElement("span")
-guestSurname.textContent = "Fernandes"
-
-// Adiciona após o ultimo filho, e aceita mais de um elemento
-// newGuest.append(guestName, guestSurname)
-
-// Adiciona antes do primeiro filho
-// newGuest.prepend(guestSurname)
-
-//É mais simples que o append e aceita apenas um argumento
-newGuest.appendChild(guestName)
-
-guests.append(newGuest)
+// input.removeAttribute('id'); // Remove o atributo disabled do input
