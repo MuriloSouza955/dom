@@ -1,21 +1,31 @@
 /*
 
-Alterando Estilos
-Nesta aula, aprendemos a manipular estilos dos elementos da DOM utilizando JavaScript. Foi mostrado como adicionar e remover classes dinamicamente, além de utilizar o método toggle para alternar entre adicionar e remover uma classe. Também foi demonstrado como modificar propriedades de estilo, como a cor de um botão, diretamente pelo JavaScript. Essas técnicas são úteis para personalizar a aparência dos elementos na página de forma dinâmica.
+Criando Elementos
+Nesta aula, aprendemos a criar elementos com JavaScript e inseri-los na DOM. Utilizamos o método document.createElement para criar novos elementos, como li e span, e o método append para adicionar elementos. Também exploramos o método prepend para adicionar elementos no início. Além disso, vimos como adicionar classes aos elementos criados. Com essas técnicas, é possível manipular a estrutura da página de forma dinâmica e criar elementos de forma programática.
 
 */
 
-const input = document.querySelector('#name');
-// // adiciona a classe input-error
-// input.classList.add('input-error');
+const guests = document.querySelector("ul")
 
-// // remove a classe input-error
-// input.classList.remove('input-error');
+const newGuest = document.createElement("li")
+// Adiciona uma classe ao elemento
+newGuest.classList.add("guest")
+// Adiciona um id ao elemento`
+newGuest.id = "guest-3"
+const guestName = document.createElement("span")
 
-// // adiciona a classe input-error se não estiver presente, ou remove se já estiver presente
-// input.classList.toggle('input-error');
+guestName.textContent = "Lucas"
 
-const button = document.querySelector('button');
+const guestSurname = document.createElement("span")
+guestSurname.textContent = "Fernandes"
 
-//Modificando o estilo diretamente
-// button.style.backgroundColor = 'red';
+// Adiciona após o ultimo filho, e aceita mais de um elemento
+// newGuest.append(guestName, guestSurname)
+
+// Adiciona antes do primeiro filho
+// newGuest.prepend(guestSurname)
+
+//É mais simples que o append e aceita apenas um argumento
+newGuest.appendChild(guestName)
+
+guests.append(newGuest)
