@@ -1,34 +1,15 @@
 const input = document.querySelector('input');
 const form = document.querySelector('form');
 
+form.onsubmit = (event) => {
+    event.preventDefault();
 
-/*
-input.addEventListener('input', (e) => {
     const value = input.value;
-    
-    const regex = /\D+/g;
+    const hasNumberRegex = /\d+/g;
 
-    //Retorna o padrão encontrado na string
-    // console.log(value.match(regex));
-
-    //Verifica se o padrão é atendido
-    // const isValue = regex.test(value);
-    // console.log(isValue);
-});
-*/
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const value = input.value;
-    const regex = /\D+/g;
-
-    if (regex.test(value)) {
-        console.log(value)
-    }else{
-        alert("Padrão não encontrado!");
+    if (hasNumberRegex.test(value)) {
+        alert("Informe um nome sem números");
+    } else {
+        alert("Cadastro realizado com sucesso!");
     }
-
-
-    // const value = input.value.replace(regex, "");
-    // console.log(value);
-});
+}
